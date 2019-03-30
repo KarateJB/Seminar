@@ -1,7 +1,7 @@
 # CPU Bound or I/O Bound
 
 The OS will handle the I/O Bound works, such as access the database.
-Async is suitable for CPU Bound works, such as resource-consuming works.
+Async is suitable for CPU Bound job which is more than 5 million seconds, such as resource-consuming works.
 Threads is a limited resource.
 
 # Concurrent computing vs Parallel computing
@@ -41,10 +41,14 @@ Usual problems in CSharp:
 
 # Design
 
-1. I'll call you back
-2. Notify the main thread: Success/Failure/Progress
-3. Improve the performance and Responsive time
-4. `Lock` is low performance
+1. Async means **I'll call you backl**.
+2. Notify the main thread: Success/Failure/Progress.
+3. Improve the performance and Responsive time.
+4. `Lock` too much codes is low performance.
+5. IIS default can have 2,500 requests and 1,000 request queue. The 3,501 request will get 503 server error. 
+6. Async-Await is Syntactic sugar, it uses Task(TAP) in the underlying structure.
+7. .NET Core will use Async in default.
+8. HttpClient is Thread-safe, can be static at async environment.
 
 
 ### Hyper Threading: 
@@ -61,8 +65,29 @@ Logical processors: 4
 
 ![](assets/001.png)
 
+# Foreground thread vs Background thread
+
+> Reference: [Foreground and Background Threads](https://docs.microsoft.com/en-us/dotnet/standard/threading/foreground-and-background-threads)
+
+In C#, use [Thread.IsBackground](https://docs.microsoft.com/en-us/dotnet/api/system.threading.thread.isbackground?view=netframework-4.7.2).
+
+If the main program has been aborted, but any foreground thread has not completed, the main program will not be aborted immediately and will waint the foreground thread completes the work.
+
+On the other hand, if the background thread has not completed the work, once the main program stops and all the backgounrd threads will be terminated immediately.
+
+
+## PLINQ
+
+```
+var list = new int[]{1,2,3,4,5}
+var plist = from p in a.AsParallel()
+            select p;
+// The order of plist depends on the assigned schedule of every CPU
+```
+
 
 # Reference
 
 - (Book)Threading and CSharp
 - Bechmark .NET
+- ILSpy
