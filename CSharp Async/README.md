@@ -49,6 +49,13 @@ Usual problems in CSharp:
 6. Async-Await is Syntactic sugar, it uses Task(TAP) in the underlying structure.
 7. .NET Core will use Async in default.
 8. HttpClient is Thread-safe, can be static at async environment.
+9. Task.Wait() can results in DeadLock in some cases. Await won't block caller's thread.
+10. `return await Task.FromResult("xxxxx")` won't create a new thread, and it ok in calling non-async methods in async method.
+11. Do not create:
+    - async void MyMethod(): Fire and forget, cannot get the status and exception of the thread even if it crashes!
+    - async string MyMethod(): Not returning Task! 
+12. Async can make good use of CPU and enable more concurrent requests in the same time in ASP.NET
+13. `Task.WaitAll()` will return `AggregateException`, `Task.WhenAll()` will return `Exception` with index 0.
 
 
 ### Hyper Threading: 
@@ -71,9 +78,11 @@ Logical processors: 4
 
 In C#, use [Thread.IsBackground](https://docs.microsoft.com/en-us/dotnet/api/system.threading.thread.isbackground?view=netframework-4.7.2).
 
-If the main program has been aborted, but any foreground thread has not completed, the main program will not be aborted immediately and will waint the foreground thread completes the work.
+If the main program has been aborted, but any foreground thread has not completed, the main program will not be aborted immediately and will wait the foreground thread completes the work.
 
 On the other hand, if the background thread has not completed the work, once the main program stops and all the backgounrd threads will be terminated immediately.
+
+> `Task.Run()` cannot create a Foreground thread, but `Thread` class can.
 
 
 ## PLINQ
@@ -84,6 +93,32 @@ var plist = from p in a.AsParallel()
             select p;
 // The order of plist depends on the assigned schedule of every CPU
 ```
+
+
+## Promise Task 
+
+- Often used in IO bound jobs
+- If using an old .NET framework not supporting Task, we can use this way to return Task.
+
+
+## SychronizationContext
+
+ 1. GUI 類型專案的同步內容將會為 UI/Main 執行緒
+ 2. ASP.NET 類型專案的同步內容將會為當時HTTP請求的執行緒
+  
+| Frameworks | SychronizationContext | Content in SychronizationContext |
+|:-----------|:----------------------|:------:|
+| Windows Form | UI Thread (WindowsFormsSynchronizationContext) | UI thread | 
+| WPF | UI Thread (DispatcherSynchronizationContext) | UI thread  |
+| ASP.NET | AspNetSynchronizationContext | Current Http request's thread  | 
+| Console | No | - |
+| ASP.NET Core | No | - |
+
+
+## ConfigureAwait(false)
+
+This method is used for not using the **SychronizationContext** .
+Which will increase the performance 
 
 
 # Reference
