@@ -111,5 +111,5 @@ OR
 - react-apollo
 
 
-# Hooks
+# Hooks + Apollo
 
