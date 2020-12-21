@@ -131,7 +131,7 @@ if (p is Student { Gender: Gender.Male, Name: string name, Score: int score } &&
 ```csharp
 if (p is Student { Gender: Gender.Male, Name: string name, Score: > 70 })
 {
-    yield return name;
+    return name;
 }
 ```
 
@@ -193,6 +193,56 @@ static string GetShape(IShape shape) => shape switch
 
 
 # 非同步系統的服務水準保證；淺談非同步系統的 SLO 設計（Andrew Wu）
+
+## Definition
+
+| Title | Definition | Description |
+|:-----:|:----------:|:------------|
+| SLA | Service Level Agreement | The agreement you make with ur clients or users. |
+| SLOs | Service Level Objectives | The agreement ur team must hit ti meet that agreement. |
+| SLIs | Service Level Indicators | The real numbers on ur performance. |
+
+
+## Preventive Maintenance Management
+
+1. Decide Service goals
+   - 99% Average Response time < 300ms
+2. Estimate current state of our system
+   - 99% Average Response time < 75ms
+3. Decide Service levels and indicators
+   - Green light: 99% Average Response time < 150ms
+   - Yellow light: 99% Average Response time between 150ms ~ 300ms
+   - Red light: 99% Average Response time > 200ms
+4. Review the levels and indicators monthly/quarterly
+   - List action items on Yellow/Red light events.
+
+
+## A queue based SMS system example (for user-registry and campain)
+
+A: Frontend/APP (Sending the request)
+B: Queue (Producing the SMS content)
+C1: Backend (Consume the SMS content and Send the request to 3rd SMS service)
+C2: 3rd SMS service
+
+1. Monitor what happening in the system, except the relied 3rd services. (Thaz A, B, C)
+2. Know the limit and bottlenecks from the indicators.
+   - SLO: A + B + C <= 5 sec.
+   - If A high = Sending the request too slow.
+   - If B high = The messages are too many in Queue or Consuming too slow.
+   - If C1 high = Handling the messages too slow.
+   - If C2 high = The 3rd SMS service low performance for sending SMS.
+
+### Solution
+
+Since C1 is high, the first solution is increasing the consumers.
+However, this solution doubles the cost and the money was not spent on the cutting edge.
+
+
+
+
+
+
+
 
 
 # 微型任務編排器 - 以 Process Pool 為例（Steven Tsai）
