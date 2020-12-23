@@ -287,18 +287,43 @@ Always thinking about what cost will you take to meet the SLO.
 
 # SQL Server 效能和你想的不一樣（許致學）
 
+Some key settings:
+
+- Cost threshold for parallelism = 25 ~ 50.
+- max worker thread = 512 + (Core - 4) * 16.
+- Disk formatted to 64K.
+- Separate DB files to different files for disk IO improvement.
+
 
 # 使用 .NET 5 實現美指期貨的量化交易策略（Will 保哥）
 
 
-# AKS 好朋友（Inca）
+
+
 
 
 # 蛻變 - Entity Framework Core 5.0（黃忠成）
 
 
-# 不會 Javascript 沒關係，用 Blazor 來解決前端需求 - 成為 Full Stack .NET 開發者吧（Alan Tsai）
-
-
 # The Journey of C# Source Generator（Roberson Liou）
+
+## What is Source Generator
+
+- Only can generate C# code
+- Lifecycle: C# -> Compile -> (Source generator: complication -> analyze code -> generate code -> Add generated code to complication) -> IL Code
+- Could make CPU high
+
+## Benefit:
+
+- Turn runtime-reflection to compile-time
+- Handle serializing file, such as .csv, .xml
+- For partial class, partial method
+
+## How to use:
+
+- VS2019, .NET 5
+- Debug lauch to debug , Syste,.Diagnostics.Debugger.Launch();
+- Can be taged as auto-generated
+- Have to restart VS to clean the cache
+- Create .NET Standard 2.0 class library
 
