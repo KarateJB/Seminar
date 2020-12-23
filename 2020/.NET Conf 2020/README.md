@@ -217,7 +217,7 @@ static string GetShape(IShape shape) => shape switch
    - List action items on Yellow/Red light events.
 
 
-## A queue based SMS system example (for user-registry and campain)
+## A queue based SMS system example (for user registration and campain activities)
 
 A: Frontend/APP (Sending the request)
 B: Queue (Producing the SMS content)
@@ -232,20 +232,57 @@ C2: 3rd SMS service
    - If C1 high = Handling the messages too slow.
    - If C2 high = The 3rd SMS service low performance for sending SMS.
 
-### Solution
+### Solution 1: Message Worker Scaleout
 
 Since C1 is high, the first solution is increasing the consumers.
 However, this solution doubles the cost and the money was not spent on the cutting edge.
 
 
+### Solution 2: Decrease Queue length
+
+Descrese Queue legth by setting multiple Queues on different purposes. Such as Queue-1 is for user registration and Queue-2 is for Campaign activities.
+
+Furthermore, set **Rate limit** while sending the requests to 3rd SMS service by different Queues.
 
 
+### TOC(Thory Of Constraints)
+
+Reference: [『高效率團隊』如何運用限制理論 (Theory of Constraints) 於軟體開發](https://medium.com/%E7%A7%91%E6%8A%80%E6%96%B0%E6%83%B3/%E9%AB%98%E6%95%88%E7%8E%87%E5%9C%98%E9%9A%8A-%E5%A6%82%E4%BD%95%E9%81%8B%E7%94%A8%E9%99%90%E5%88%B6%E7%90%86%E8%AB%96-theory-of-constraints-%E6%96%BC%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC-4617e36ba79a)
+
+1. Find the bottleneck
+
+   The previous stage usaully is being overflowed. 
+
+2. Use the bottleneck wisely
+
+   Dont stop the bottleneck stage, keep it on 100% usage.
+
+3. Turn the resource from non-bottleneck stage to bottleneck stage
+
+4. Improving to break the bottleneck
+
+5. Back to step 1.
 
 
+### Other solutions:
+
+1. Control the data source. E.q. Help Desk uses the phone number to validate the user by manully calling him/her.
+
+2. Temperatorly stop putting none-critical task into Queue. For example, if there are too many users register on the same time, we can stop sending Campaign SMS for a time.
+
+3. Change the SLO. E.q. The Campaign SMS could be sent more than 5 sec.
+   - User registration SMS <= 5 sec 
+   - Campaign SMS <= 10 min
+
+4. Enhance the performance of Workers.
+
+5. Since a user has no patience on waiting more than 30 sec for the registration SMS. So we should not send the SMS that exceed 30 sec. 
+
+### SLO vs COST
+
+Always thinking about what cost will you take to meet the SLO.
 
 
-
-# 微型任務編排器 - 以 Process Pool 為例（Steven Tsai）
 
 
 # SQL Server 效能和你想的不一樣（許致學）
