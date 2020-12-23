@@ -297,12 +297,65 @@ Some key settings:
 
 # 使用 .NET 5 實現美指期貨的量化交易策略（Will 保哥）
 
+## Why
 
+- Humanity weeakness: Greed and fear make investors do foolish thing
+- Monitor the latest changes of market.
 
+## How
+
+- Indicators: the information of price changing in market.
+- Signals: use indicators and codes to ouput if you should buy or sell. 
+- Strategy: is the result of combining Indicators and Signals.
+
+## Implementation with .NET 5
+
+- Source Generators
+- Record Types
+- IAsyncEnumerable<T>
+- System.Threading.Channels
 
 
 
 # 蛻變 - Entity Framework Core 5.0（黃忠成）
+
+## ORM vs Micro ORM
+
+- ORM: Mapping, Translate Query(remoing the concept of SQL), Tracking, Relations
+- Micro-ORM: Mapping, Simple CRUD plugin
+
+
+## New features
+
+- Mapping query result to object  (From Dapper)
+- Install EF Core Power tools
+- Simple logging
+- dbContext.ChangeTracker.Clear() => Clean the copy of the DbContext.
+- (From EF Core 3) Change proxies: the new tracking mode. useChangeTrackingProxies();
+- SavePoint. Can rollback  to the previous SaveChanges (Only avaible to SQL Server now)
+- DbContextFactory for DI
+- Query Type, ToSqlQuery
+- Compute columns (based on database)
+- Global filter (suitable for soft-deletion or data permissions)
+- Property Bag (for dynamic conditions)
+- Split Query: Improve the performance of complext SQL in single query. Like a left join query, it will query the master table and detail table one by one and join them automatically.
+- Inherit: TPH, TPT
+- User Function Mapping
+- Table Value Function (For SQL Server)
+- SaveChange intercepter: SaveChange
+
+## DBContext:
+- Suggest to be short life.
+- Need to be disposed for cleaning the entities in memory.
+- Object Tracking: Context-Aware(Full-scan), if you dont need to modify, set "AsNoTracking"
+
+## How to improve Performance
+
+- Use Find instead of where
+- Dont query twice
+- Separate the query and update DbContext for NoTracking
+
+
 
 
 # The Journey of C# Source Generator（Roberson Liou）
@@ -327,3 +380,9 @@ Some key settings:
 - Have to restart VS to clean the cache
 - Create .NET Standard 2.0 class library
 
+
+
+# Reference
+
+- [HACKMD](https://hackmd.io/@Study4/dotnetconf-2020/https%3A%2F%2Fdotnetconf2020.study4.tw%2F)
+- [Slides](https://github.com/Study4/DotNetConfTaipei2020/tree/master/slides)
