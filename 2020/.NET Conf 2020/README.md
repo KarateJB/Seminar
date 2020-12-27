@@ -327,33 +327,35 @@ Some key settings:
 
 ## New features
 
-- Mapping query result to object  (From Dapper)
-- Install EF Core Power tools
-- Simple logging
-- dbContext.ChangeTracker.Clear() => Clean the copy of the DbContext.
-- (From EF Core 3) Change proxies: the new tracking mode. useChangeTrackingProxies();
-- SavePoint. Can rollback  to the previous SaveChanges (Only avaible to SQL Server now)
-- DbContextFactory for DI
-- Query Type, ToSqlQuery
-- Compute columns (based on database)
+- Mapping query result to object  (From Dapper).
+- Install EF Core Power tools.
+- Simple logging.
+- `dbContext.ChangeTracker.Clear()` => Clean the copy of the DbContext.
+- (From EF Core 3) Change proxies: the new tracking mode, `UseChangeTrackingProxies()`.
+- SavePoint. Can rollback  to the previous SaveChanges (Only avaible to SQL Server now).
+- [DbContextFactory](https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/#using-a-dbcontext-factory-eg-for-blazor) for DI.
+- Query Type, [ToSqlQuery](https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/whatsnew#map-entity-types-to-queries). 
+- [Compute columns](https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/whatsnew#stored-persisted-computed-columns) (based on database).
 - Global filter (suitable for soft-deletion or data permissions)
 - Property Bag (for dynamic conditions)
-- Split Query: Improve the performance of complext SQL in single query. Like a left join query, it will query the master table and detail table one by one and join them automatically.
-- Inherit: TPH, TPT
-- User Function Mapping
-- Table Value Function (For SQL Server)
-- SaveChange intercepter: SaveChange
+- [Split Query](https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-5.0/whatsnew#split-queries-for-related-collections): Improve the performance of complext SQL in single query. Like a left join query, it will query the master table and detail table one by one and join them automatically.
+- Inherit: TPH, TPT, See [inheritance](https://docs.microsoft.com/en-us/ef/core/modeling/inheritance).
+- User Function Mapping.
+- Table Value Function (For SQL Server).
+- [SaveChange intercepter](https://docs.microsoft.com/en-us/ef/core/logging-events-diagnostics/interceptors).
+
 
 ## DBContext:
+
 - Suggest to be short life.
 - Need to be disposed for cleaning the entities in memory.
 - Object Tracking: Context-Aware(Full-scan), if you dont need to modify, set "AsNoTracking"
 
 ## How to improve Performance
 
-- Use Find instead of where
-- Dont query twice
-- Separate the query and update DbContext for NoTracking
+- Use `find` instead of `where`.
+- Dont query twice.
+- Separate the query and update DbContext so that we can always set `NoTracking` on the DbContext for query.
 
 
 
