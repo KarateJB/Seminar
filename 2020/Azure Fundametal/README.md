@@ -42,10 +42,45 @@
    - Hybrid cloud:
      - Combines public and private clouds.
      - On-prem AD sync to Azure AD for Office365 usage.
+9. Types of Services
+   All of the following servers can talk to each other.
+   - SaaS
+     - Prdicative cose.
+
+   - PaaS
+     - Build the solution or buy the solution.
+     - 
+   - IaaS
+     - Flexible.
+
+   When do you use SaaS, PaaS, IaaS? think "Pizza as a Service".
 
 
-# Module 2
+
+# Module 2 - Azure Core Services
+
+## Regions
+
+1. A regions is a collection of Data Centers.
+2. It gives us flexibity and scalibility.
+3. Some of regions of different resources.
+4. Pick the regions closing to the end users.
+5. Customer chooses the regions, not cloud provider.
+6. Regions are paired, and can be failed-over. One pair must in the same geography.
+7. Facilities have isolated cooling, power, firewall and networking.
+
+
+## Zones and Sets
+
+1. Data centers have updates, the update can be by Zones and Sets.
+2. Isolation bundary.
+3. 3 webservers on the same region, but Azure will put each of them in the different zone. MS doesn't update the 3 zones in the same time. (Fault and update tolerence).
+4. 
+
+
 
 # Module 3
 
 # Module 4
+
+aka.ms/azfun
