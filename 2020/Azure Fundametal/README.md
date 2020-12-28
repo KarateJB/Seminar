@@ -1,3 +1,9 @@
+# Certification areas
+
+![](assets/001.jpg)
+
+
+
 # Module 1
 
 ## Why cloud
@@ -14,7 +20,7 @@
 - Fault tolerance
   - Pysical problem is cloud provider's responsibility.
   - Disaster recovery.
-  - Share responsibity
+  - Share responsibity between customers and Azure.
 
 ## Features
 
@@ -28,32 +34,38 @@
    - Less expensive
    - More effoicient
    - Pass benefits on
-6. CapEx vs OpEx
-   - Nobody likes to run cable. Dont worry about the hardware.
-7. Consumption-based model
+6. CapEx(Capital Expenditure,資本支出)
+   - Deduct the expense from ur tax bill.
+   - High upfront cose, value of investment reduces over time.
+   - Dont worry about the hardware since cloud provider will take care of it.
+7. OpEx(Operational Expenditure,運營支出)
+   - No upfront cose, pay as you use.
+8. Consumption-based model
    - No upfront cost.
-8. Types of cloud
+9. Types of cloud
    - Public cloud
-     - ExpressRoute
-     - 
    - Private cloud
-     - Owned by customer.
-
    - Hybrid cloud:
      - Combines public and private clouds.
      - On-prem AD sync to Azure AD for Office365 usage.
+   
+   ![](assets/002.jpg)
+
+
 9. Types of Services
    All of the following servers can talk to each other.
    - SaaS
-     - Prdicative cose.
-
+     - Prdicative cost.
    - PaaS
      - Build the solution or buy the solution.
-     - 
    - IaaS
      - Flexible.
 
+   ![](assets/003.jpg)
+
    When do you use SaaS, PaaS, IaaS? think "Pizza as a Service".
+
+   ![](assets/004.jpg)
 
 
 
@@ -69,12 +81,22 @@
 6. Regions are paired, and can be failed-over. One pair must in the same geography.
 7. Facilities have isolated cooling, power, firewall and networking.
 
+![](aseets/005.jpg)
+
+
 
 ## Zones and Sets
 
 1. Data centers have updates, the update can be by Zones and Sets.
 2. Isolation bundary.
 3. 3 webservers on the same region, but Azure will put each of them in the different zone. MS doesn't update the 3 zones in the same time. (Fault and update tolerence).
+
+![](assets/006.jpg)
+
+![](assets/007.jpg)
+
+![](assets/008.jpg)
+
 
 
 ## Resource Groups
@@ -83,7 +105,20 @@
 2. The resouces in a resource group lives with same life cycle and same region.
 3. Hoerarchy: HereManagement groups -> Subscriptions -> Resource groups -> Resources.
 4. Security by role-based authorization.
-5. 
+ 
+![](assets/009.jpg)
+
+![](assets/010.jpg)
+
+
+## Virtual Machine Services
+
+- Azure VMs
+- VM scale sets
+- App services
+- Functions
+
+
 
 ## Azure Portal
 
@@ -98,8 +133,11 @@
 
 ## Container Services
 
-### Azure Container Service
-### AKS
+![](assets/011.jpg)
+
+- Azure Container Service
+- AKS
+
 
 ## Azure Newwork Services
 
@@ -110,11 +148,12 @@
 - Content Delivery Network
 - VNet Peering
 
+
 ## Connectivity
 
-### ExpressRoute
+![](assets/012.jpg)
 
-Connect from on-prem to Azure.
+- ExpressRoute Connect from on-prem to Azure.
 
 
 ## Azure Data Categories
@@ -123,19 +162,37 @@ Connect from on-prem to Azure.
 2. Semi-structure data
 3. Unstructure data
 
+![](assets/013.jpg)
 
 
-## Create a storage account tutorial
+## Azure Storage Services
+
+![](assets/014.jpg)
+
+
+### IaaS
+
+- Disks
+- Files
+
+### PasS
+
+- Containers
+- Tables
+- Queues
+
+### Create a storage account tutorial
 
 1. Got to **Storage Account**
 2. Storage type:
    - Hot:
    - Cold
 3. Replication: notice the traffice cost copying the data between regions (eager traffice).
-4. 
 
 
 ## Database server
+
+![](assets/015.jpg)
 
 ### SQL Server
 
@@ -155,13 +212,23 @@ Connect from on-prem to Azure.
 ## Big Data and Analytics
 
 - Azure Synapse Analytics
+  - Cloud-based Enterprise Data Warehouse.
+  - Massively parallel processing (mpp).
 - Azure HDInsight
+  - Fully-managed, open-source analytics service.
+  - Easier, faster, cost-effective.
 - Azure Data Lake Analytics
+  - On-demand ananlytics service.
+
 
 ## Azure AI
 
 - Machine Learning Service
+  - Develop, train, test, deploy, manage and track machine learning mopdels.
 - Machine Learning Studio
+  - Drag-n-drop visual workspace.
+  - Build, test amd deploy machine learning solutions.
+
 
 ## Severless Computing
 
@@ -169,15 +236,26 @@ Connect from on-prem to Azure.
 - Azure Logic App
 - Event Grid
 
-## DevOps Server
+![](assets/016.jpg)
+
+
+
+## DevOps Services
 
 - Azure DevOps services
+  - Pipelines
+  - Git repositories
+  - Kanban boards
+  - Load testing
 - Azure DevTest lab
+  - Quickly create environments
+  - Controlling costs
+
 
 ## App Service
 
-- ...
-- Serveless code
+![](assets/017.jpg)
+
 
 
 ## Azure Management Tools
@@ -185,7 +263,14 @@ Connect from on-prem to Azure.
 - Auzre Portal
 - Azure Powershell
 - Azure CLI
-- Cloud shell
+- Cloud shell: command can be stored
+- Powershell
+  - `get-command`
+  - `get-help update-azvm`
+
+
+![](assets/018.jpg)
+
 
 
 
