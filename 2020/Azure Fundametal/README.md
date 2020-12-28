@@ -75,7 +75,118 @@
 1. Data centers have updates, the update can be by Zones and Sets.
 2. Isolation bundary.
 3. 3 webservers on the same region, but Azure will put each of them in the different zone. MS doesn't update the 3 zones in the same time. (Fault and update tolerence).
+
+
+## Resource Groups
+
+1. Every resource lives in a Resource Group.
+2. The resouces in a resource group lives with same life cycle and same region.
+3. Hoerarchy: HereManagement groups -> Subscriptions -> Resource groups -> Resources.
+4. Security by role-based authorization.
+5. 
+
+## Azure Portal
+
+1. Use the search panel to search the available resources.
+2. Preview product(s) doesn't have SLA.
+3. Tutorials about creating VM:
+   - Event Log monitor is optional, it will use some storage.
+   - You can always change the Size of a VM.
+   - Custom Script: run some scripts after the VM created.
+   - The process of creation can be saved as a template(JSON file) for later creating the same-spec VM.
+   - Bastion service: connect to a public-ip VM with first authentication.
+
+## Container Services
+
+### Azure Container Service
+### AKS
+
+## Azure Newwork Services
+
+- Azure Virtual Network
+- Azure Load Balance
+- VPN Gateway
+- Azure Application Gateway
+- Content Delivery Network
+- VNet Peering
+
+## Connectivity
+
+### ExpressRoute
+
+Connect from on-prem to Azure.
+
+
+## Azure Data Categories
+
+1. Structure data
+2. Semi-structure data
+3. Unstructure data
+
+
+
+## Create a storage account tutorial
+
+1. Got to **Storage Account**
+2. Storage type:
+   - Hot:
+   - Cold
+3. Replication: notice the traffice cost copying the data between regions (eager traffice).
 4. 
+
+
+## Database server
+
+### SQL Server
+
+- Its a PaaS service.
+- Azure has migration data.
+
+
+## Azure Marketplace
+
+
+## Azure IOT
+
+- Monitor IOT devices
+- Bidirection communication
+
+
+## Big Data and Analytics
+
+- Azure Synapse Analytics
+- Azure HDInsight
+- Azure Data Lake Analytics
+
+## Azure AI
+
+- Machine Learning Service
+- Machine Learning Studio
+
+## Severless Computing
+
+- Azure Functions
+- Azure Logic App
+- Event Grid
+
+## DevOps Server
+
+- Azure DevOps services
+- Azure DevTest lab
+
+## App Service
+
+- ...
+- Serveless code
+
+
+## Azure Management Tools
+
+- Auzre Portal
+- Azure Powershell
+- Azure CLI
+- Cloud shell
+
 
 
 
@@ -84,3 +195,18 @@
 # Module 4
 
 aka.ms/azfun
+
+
+# Questions
+
+1. First thing to create in Azure?
+  - Resource group: A single management unit.
+
+2. Cannot find my resource?
+   - The resource might in the other region.
+
+3. Service Message Block(SMB)
+
+
+
+`folks`
