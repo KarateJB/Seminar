@@ -342,15 +342,55 @@
 - Implement policies
   - Initialize definitions
   - Initialize assignments
+- Role-based access control (RBAC)
+  - Enable allowing/disallowing accessing to Azure Portal and controlling resources.
+  - Resource groups
+
+- Resource locks
+  - Protect the resources
+  - No cost
+  - Options:
+    - CanNotDelete
+    - ReadOnly (For example, Cannot poweroff the VM cus the property changes)
+  - Turn it on at resource's **Lock** option.
+
+## Azure Blueprints  
+
+- Create reusable environment definitions.
+
+
+## Subscription Governance
+
 - 
 
-## Azure Identity
+## Tags
+
+## Azure Monitor
+
+- Collect and analysics.
+- Montoring applications and services.
+- Azure Service Health
+
+## Azure Advisor
+
+- Free.
+- Suggest you to use small size VM if utilization is less than 30%.
+- Help you save money.
+- Operational Excellence
+  - Create health aleart
+
+
+## Microsoft and ITAR
+
+- Check the doc: Azure Compliance Offering
+- Azure China 23Vianet
+
+
 
 
 
 # Module 4
 
-aka.ms/azfun
 
 
 # Questions
@@ -364,5 +404,6 @@ aka.ms/azfun
 3. Service Message Block(SMB)
 
 
+aka.ms/azfun
 
 `folks`
