@@ -418,13 +418,47 @@
  - Web direct
 
 - Pricing based on
-  - regions
+  - regions (different location and region matters)
   - resource type
   - service
 
 ### Zones for billing purpose
 
 ### Pricing calclator
+
+![]()
+
+- Prepay, e.q. I need ten D2 machines for 3 years reservation.
+  But if you want to cancel or upgrade the machines, there be a small amount of penalty.
+- Hybrid benefit: if you already have on-prem Windows Server, SQL Server license.
+
+### TCO calculator
+
+- Calculate the total price on Azure vs On-prem.
+
+## Azure Cost Management
+
+![]()
+
+## Open a support request
+
+- Azure Portal: Help + Support
+- On resource >> New support request
+
+
+## SLA
+
+![]()
+
+
+## Service lifecycle
+
+1. Private Preview
+2. Public Preview
+3. Genernally available
+
+- See the roadmap of Azure updates.
+
 
 
 
@@ -442,6 +476,9 @@
 3. Service Message Block(SMB)
 
 
-aka.ms/azfun
 
-`folks`
+
+# Reference
+
+- [Master the basics of Azure: Fundamentals](aka.ms/azfunpath)
+- `folks` are much used on speekers.
