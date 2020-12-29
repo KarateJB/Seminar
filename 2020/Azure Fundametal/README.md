@@ -274,8 +274,58 @@
 
 
 
-
 # Module 3
+
+## Authentication vs Authorization
+
+- Authorization happens after Authentication
+- Azure Active Directory
+  - SSO
+  - Application Management
+  - B2B, B2C
+  - Device management
+  - Azure AD uses SAML, OAuth.
+
+- Azure AD vs AD
+  - Azure AD doesn't have GPO, use InTune instead.
+  - AD use Query OU path
+- You can use Azure AD on AWS, Salesforce, Dropbox, etc.
+- Azure Multi-Factor Authentication
+  - Bad thing is that you will forget your real password in the end.
+
+
+## Secure network connectivity
+
+1. Perimeter layer
+   - Protect boundaries from DDoS
+2. Networking layer
+
+## Azure firewall
+
+## Azure Distributed Denial of service 
+
+## NSGs
+
+## ASGs
+
+### Example for inbound security rule
+
+- Web server to DB server.
+- Who you are and where you what to go.
+- Set the priority, for example set the allow rule  before the deny.
+- Network Watcher
+  - It will tell you what is going on.
+  - IP Allow Verify.
+  - Rules with diagram.
+- Set the deny-any rule on the last rule.
+
+
+
+
+
+## Azure Identity
+
+
 
 # Module 4
 
