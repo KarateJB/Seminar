@@ -320,8 +320,29 @@
 - Set the deny-any rule on the last rule.
 
 
+### Key Vault
+
+1. Choose the vault credentials
+2. The speaker shows how to use the secret from key vault to recover the DB.
 
 
+## Azure Information Protection (AIP)
+
+## Azure Advanced Threat Protecton (ATP)
+
+- Identify, detecting and investment.
+- Identify Protection, such as concurrent signin from America and Japan.
+
+
+## Governance policy
+
+### Azure policies
+
+- How to control people uses Azure.
+- Implement policies
+  - Initialize definitions
+  - Initialize assignments
+- 
 
 ## Azure Identity
 
