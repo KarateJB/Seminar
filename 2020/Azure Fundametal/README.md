@@ -389,7 +389,45 @@
 
 
 
-# Module 4
+# Module 4 - Pricing
+
+## Subscriptions
+
+- Authention and authorization
+
+## Management Groups
+
+- Include multiple subscriptions
+
+## Subscriptions offers
+
+- Free
+  - Search "Free service" on Azure Portal.
+- Pay as you go
+- Enterprise Agreement
+- Student
+- An account can have multiple subscriptions
+
+![]()
+
+## Planning and management
+
+-Depends on
+ - Enterprise
+ - CSP
+ - Web direct
+
+- Pricing based on
+  - regions
+  - resource type
+  - service
+
+### Zones for billing purpose
+
+### Pricing calclator
+
+
+
 
 
 
