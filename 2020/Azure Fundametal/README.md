@@ -3,7 +3,7 @@
 ![](assets/001.jpg)
 
 
-
+--
 # Module 1
 
 ## Why cloud
@@ -21,6 +21,8 @@
   - Pysical problem is cloud provider's responsibility.
   - Disaster recovery.
   - Share responsibity between customers and Azure.
+
+
 
 ## Features
 
@@ -51,8 +53,7 @@
    
    ![](assets/002.jpg)
 
-
-9. Types of Services
+10. Types of Services
    All of the following servers can talk to each other.
    - SaaS
      - Prdicative cost.
@@ -69,7 +70,10 @@
 
 
 
+
+--
 # Module 2 - Azure Core Services
+
 
 ## Regions
 
@@ -85,6 +89,7 @@
 
 
 
+
 ## Zones and Sets
 
 1. Data centers have updates, the update can be by Zones and Sets.
@@ -96,6 +101,7 @@
 ![](assets/007.jpg)
 
 ![](assets/008.jpg)
+
 
 
 
@@ -131,12 +137,15 @@
    - The process of creation can be saved as a template(JSON file) for later creating the same-spec VM.
    - Bastion service: connect to a public-ip VM with first authentication.
 
+
+
 ## Container Services
 
 ![](assets/011.jpg)
 
 - Azure Container Service
 - AKS
+
 
 
 ## Azure Newwork Services
@@ -147,6 +156,7 @@
 - Azure Application Gateway
 - Content Delivery Network
 - VNet Peering
+
 
 
 ## Connectivity
@@ -175,11 +185,13 @@
 - Disks
 - Files
 
+
 ### PasS
 
 - Containers
 - Tables
 - Queues
+
 
 ### Create a storage account tutorial
 
@@ -190,9 +202,11 @@
 3. Replication: notice the traffice cost copying the data between regions (eager traffice).
 
 
+
 ## Database server
 
 ![](assets/015.jpg)
+
 
 ### SQL Server
 
@@ -200,13 +214,16 @@
 - Azure has migration data.
 
 
+
 ## Azure Marketplace
+
 
 
 ## Azure IOT
 
 - Monitor IOT devices
 - Bidirection communication
+
 
 
 ## Big Data and Analytics
@@ -221,6 +238,7 @@
   - On-demand ananlytics service.
 
 
+
 ## Azure AI
 
 - Machine Learning Service
@@ -228,6 +246,7 @@
 - Machine Learning Studio
   - Drag-n-drop visual workspace.
   - Build, test amd deploy machine learning solutions.
+
 
 
 ## Severless Computing
@@ -252,9 +271,11 @@
   - Controlling costs
 
 
+
 ## App Service
 
 ![](assets/017.jpg)
+
 
 
 
@@ -273,10 +294,21 @@
 
 
 
-
+--
 # Module 3
 
+![](assets/019.jpg)
+
 ## Authentication vs Authorization
+
+> Authentication:
+> - Establish an identity.
+> - Chanllenges access for credentials.
+
+> Authorization
+> - Assumes successfil authentication.
+> - Establishs appropriate level of access.
+
 
 - Authorization happens after Authentication
 - Azure Active Directory
@@ -285,13 +317,19 @@
   - B2B, B2C
   - Device management
   - Azure AD uses SAML, OAuth.
-
 - Azure AD vs AD
   - Azure AD doesn't have GPO, use InTune instead.
   - AD use Query OU path
 - You can use Azure AD on AWS, Salesforce, Dropbox, etc.
 - Azure Multi-Factor Authentication
   - Bad thing is that you will forget your real password in the end.
+
+![](assets/020.jpg)
+
+![](assets/021.jpg)
+
+![](assets/022.jpg)
+
 
 
 ## Secure network connectivity
@@ -300,13 +338,38 @@
    - Protect boundaries from DDoS
 2. Networking layer
 
+![](assets/023.jpg)
+
+
+
 ## Azure firewall
 
-## Azure Distributed Denial of service 
+![](assets/024.jpg)
 
-## NSGs
 
-## ASGs
+
+## Azure Distributed Denial of Service (DDoS) protection
+
+![](assets/025.jpg)
+
+
+
+## Network Security Groups (NSGs)
+
+Filters network traffic to/from.
+
+![](assets/026.jpg)
+
+
+
+
+## Application Security Groups (ASGs)
+
+Provides server groups with similar port filtering requirements.
+
+![](assets/027.jpg)
+
+
 
 ### Example for inbound security rule
 
@@ -319,6 +382,18 @@
   - Rules with diagram.
 - Set the deny-any rule on the last rule.
 
+![](assets/028.jpg)
+
+
+
+
+## Azure Security Center
+
+![](assets/029.jpg)
+
+![](assets/030.jpg)
+
+
 
 ### Key Vault
 
@@ -326,12 +401,24 @@
 2. The speaker shows how to use the secret from key vault to recover the DB.
 
 
+![](assets/031.jpg)
+
+
+
 ## Azure Information Protection (AIP)
+
+![](assets/032.jpg)
+
+
 
 ## Azure Advanced Threat Protecton (ATP)
 
 - Identify, detecting and investment.
 - Identify Protection, such as concurrent signin from America and Japan.
+
+![](assets/033.jpg)
+
+
 
 
 ## Governance policy
@@ -340,36 +427,79 @@
 
 - How to control people uses Azure.
 - Implement policies
-  - Initialize definitions
-  - Initialize assignments
+  - Initialize definitions.
+  - Initialize assignments.
+  - Review the evaluation results.
 - Role-based access control (RBAC)
   - Enable allowing/disallowing accessing to Azure Portal and controlling resources.
   - Resource groups
 
-- Resource locks
-  - Protect the resources
-  - No cost
-  - Options:
-    - CanNotDelete
-    - ReadOnly (For example, Cannot poweroff the VM cus the property changes)
-  - Turn it on at resource's **Lock** option.
+
+![](assets/034.jpg)
+
+![](assets/035.jpg)
+
+![](assets/036.jpg)
+
+![](assets/037.jpg)
+
+![](assets/038.jpg)
+
+
+
+### Resource locks
+
+- Protect the resources
+- No cost
+- Options:
+  - CanNotDelete
+  - ReadOnly (For example, Cannot poweroff the VM cus the property changes)
+- Turn it on at resource's **Lock** option.
+
+![](assets/039.jpg)
+
+
 
 ## Azure Blueprints  
 
 - Create reusable environment definitions.
 
+![](assets/040.jpg)
+
+
 
 ## Subscription Governance
 
-- 
+![](assets/041.jpg)
+
+
 
 ## Tags
+
+- Metadata for resources.
+- Logically organizes resources into a taxonomy(分類).
+- Name-value pair.
+- Very useful for rolling up billing information.
+
+
 
 ## Azure Monitor
 
 - Collect and analysics.
 - Montoring applications and services.
 - Azure Service Health
+
+![](assets/042.jpg)
+
+![](assets/043.jpg)
+
+
+
+## Azure Service Health
+
+![](assets/044.jpg)
+
+
 
 ## Azure Advisor
 
@@ -379,6 +509,9 @@
 - Operational Excellence
   - Create health aleart
 
+![](assets/045.jpg)
+
+
 
 ## Microsoft and ITAR
 
@@ -386,18 +519,21 @@
 - Azure China 23Vianet
 
 
-
-
-
+--
 # Module 4 - Pricing
 
 ## Subscriptions
 
-- Authention and authorization
+- Authention and authorization to Azure accounts.
+- Provide billing n access control boundaries.
+- An account can have one or more subscriptions.
+
+
 
 ## Management Groups
 
-- Include multiple subscriptions
+![](assets/046.jpg)
+
 
 ## Subscriptions offers
 
@@ -408,7 +544,11 @@
 - Student
 - An account can have multiple subscriptions
 
-![]()
+![](assets/047.jpg)
+
+![](assets/048.jpg)
+
+
 
 ## Planning and management
 
@@ -418,37 +558,69 @@
  - Web direct
 
 - Pricing based on
-  - regions (different location and region matters)
-  - resource type
-  - service
+  - Regions (different location and region matters)
+  - Resource type
+  - Service
+
 
 ### Zones for billing purpose
 
+![](assets/049.jpg)
+
+
 ### Pricing calclator
 
-![]()
+![](assets/050.jpg)
 
 - Prepay, e.q. I need ten D2 machines for 3 years reservation.
   But if you want to cancel or upgrade the machines, there be a small amount of penalty.
 - Hybrid benefit: if you already have on-prem Windows Server, SQL Server license.
+- Minimizing costs.
+
+![](assets/051.jpg)
+
 
 ### TCO calculator
 
 - Calculate the total price on Azure vs On-prem.
 
+
+
 ## Azure Cost Management
 
-![]()
+![](assets/052.jpg)
 
-## Open a support request
+
+
+## Support plan options
+
+![](assets/053.jpg)
+
+
+### Open a support request
 
 - Azure Portal: Help + Support
 - On resource >> New support request
 
 
+### Other resources
+
+![](assets/054.jpg)
+
+![](assets/055.jpg)
+
+
+
 ## SLA
 
-![]()
+![](assets/056.jpg)
+
+![](assets/057.jpg)
+
+![](assets/058.jpg)
+
+![](assets/059.jpg)
+
 
 
 ## Service lifecycle
@@ -459,25 +631,22 @@
 
 - See the roadmap of Azure updates.
 
+![](assets/060.jpg)
+
+![](assets/061.jpg)
 
 
-
-
-
-
+--
 # Questions
 
 1. First thing to create in Azure?
   - Resource group: A single management unit.
-
 2. Cannot find my resource?
    - The resource might in the other region.
-
 3. Service Message Block(SMB)
 
 
-
-
+--
 # Reference
 
 - [Master the basics of Azure: Fundamentals](aka.ms/azfunpath)
