@@ -650,4 +650,4 @@ Provides server groups with similar port filtering requirements.
 # Reference
 
 - [Master the basics of Azure: Fundamentals](aka.ms/azfunpath)
-- `folks` are much used on speekers.
+- `folks` are much used by speekers.
