@@ -28,13 +28,13 @@
 
 1. 56 regions in the world.
 2. Olympics online game uses Azure Data Center.
-3. Predicative cose for budget.
+3. Predicative cost for budget.
 4. Cloud and Security
    - How I put it and how the cloud provider save it?
    - DDoS protection is default for every service and free.
 5. Economies of scale
    - Less expensive
-   - More effoicient
+   - More efficient
    - Pass benefits on
 6. CapEx(Capital Expenditure,資本支出)
    - Deduct the expense from ur tax bill.
@@ -108,8 +108,8 @@
 ## Resource Groups
 
 1. Every resource lives in a Resource Group.
-2. The resouces in a resource group lives with same life cycle and same region.
-3. Hoerarchy: HereManagement groups -> Subscriptions -> Resource groups -> Resources.
+2. The resouces in a resource group lives with same life cycle.
+3. Hoerarchy: Management groups -> Subscriptions -> Resource groups -> Resources.
 4. Security by role-based authorization.
  
 ![](assets/009.jpg)
@@ -199,7 +199,7 @@
 2. Storage type:
    - Hot:
    - Cold
-3. Replication: notice the traffice cost copying the data between regions (eager traffice).
+3. Replication: notice the traffic cost copying the data between regions (eager traffic).
 
 
 
@@ -306,7 +306,7 @@
 > - Chanllenges access for credentials.
 
 > Authorization
-> - Assumes successfil authentication.
+> - Assumes successful authentication.
 > - Establishs appropriate level of access.
 
 
@@ -436,8 +436,6 @@ Provides server groups with similar port filtering requirements.
 
 
 ![](assets/034.jpg)
-
-![](assets/035.jpg)
 
 ![](assets/036.jpg)
 
@@ -649,5 +647,5 @@ Provides server groups with similar port filtering requirements.
 --
 # Reference
 
-- [Master the basics of Azure: Fundamentals](aka.ms/azfunpath)
+- [Master the basics of Azure: Fundamentals](https://aka.ms/azfunpath)
 - `folks` are much used by speekers.
